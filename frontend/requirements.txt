@@ -1,0 +1,4 @@
+# Dependencies for the Streamlit web app.
+bytez
+Pillow
+streamlit

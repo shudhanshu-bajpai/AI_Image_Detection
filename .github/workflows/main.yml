@@ -23,7 +23,7 @@ jobs:
         make install
     
     - name: run python
-      working-directory: ./AI_generate
+      working-directory: ./backend/AI_generate
       env:
        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}

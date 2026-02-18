@@ -1,0 +1,17 @@
+openai
+python-dotenv
+Pillow
+boto3
+google-auth 
+google-auth-oauthlib 
+google-auth-httplib2 
+google-api-python-client
+pandas
+
+retina-face
+torchvision
+umap-learn
+streamlit
+scikit-learn
+huggingface_hub
+transformers
