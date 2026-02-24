@@ -1,15 +1,10 @@
 import numpy as np
 import boto3
-
+import os
 import pandas as pd
 
-session = boto3.Session(
-    aws_access_key_id="***REMOVED***",
-    aws_secret_access_key="***REMOVED***",
-    region_name='us-east-1'
-)
-
-s3 = session.client('s3')
+# Use environment variables: AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, AWS_DEFAULT_REGION
+s3 = boto3.client('s3', region_name=os.getenv('AWS_DEFAULT_REGION', 'us-east-1'))
 
 paginator = s3.get_paginator('list_objects_v2')
 pages = paginator.paginate(Bucket='dalle2images', Prefix='fake/')

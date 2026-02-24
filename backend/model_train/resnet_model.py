@@ -10,13 +10,8 @@ import tensorflow_datasets as tfds
 
 tfds.disable_progress_bar()
 
-session = boto3.Session(
-    aws_access_key_id="***REMOVED***",
-    aws_secret_access_key="***REMOVED***",
-    region_name='us-east-1'
-)
-
-s3 = session.client('s3')
+# Use environment variables: AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, AWS_DEFAULT_REGION
+s3 = boto3.client('s3', region_name=os.getenv('AWS_DEFAULT_REGION', 'us-east-1'))
 
 # s3 = boto3.client('s3')
 
